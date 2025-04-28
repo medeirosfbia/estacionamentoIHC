@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 import { ShieldCheck, XCircle, Headset } from "lucide-react"; // Ícones do Lucide
 
 import CarrosImage from "/carsImage.png"; // sua imagem

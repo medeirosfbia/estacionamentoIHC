@@ -30,7 +30,7 @@ export const CardModal = () => {
         setuserEmail(e.target.value);
     }
 
-
+    const carRating = 4.5; // Exemplo de rating, você pode substituir pelo valor real
 
 
     return (
@@ -72,7 +72,7 @@ export const CardModal = () => {
                                                 <h3 className="text-gray-600">Toyota Corolla</h3>
                                                 <div className="flex items-center gap-1">
                                                     {Array.from({ length: 5 }, (_, i) => {
-                                                        const rating = 3.5 || 0;
+                                                        const rating = carRating || 0;
                                                         if (rating >= i + 1) {
                                                             return <Star key={i} className="w-4 h-4 text-blue-600 fill-blue-600" />;
                                                         } else if (rating >= i + 0.5) {

@@ -1,5 +1,4 @@
 import React from "react";
-import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
