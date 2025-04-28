@@ -2,6 +2,8 @@ import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react"
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Card, CardContent } from "../ui/card";
 
+import { Star, StarHalf, StarOff } from "lucide-react";
+
 export const CardModal = () => {
 
     let [isOpen, setIsOpen] = useState(false)
@@ -14,6 +16,12 @@ export const CardModal = () => {
         setIsOpen(false)
     }
 
+    function handleError() {
+        alert('Servidor indisponível, tente novamente mais tarde.')
+    }
+
+
+
 
 
     const [emailUserType, setuserEmail] = useState('');
@@ -22,7 +30,8 @@ export const CardModal = () => {
         setuserEmail(e.target.value);
     }
 
-    
+
+
 
     return (
         <div>
@@ -54,24 +63,36 @@ export const CardModal = () => {
                                             </Button>
                                         </div>
                                         <div className="space-y-6 p-10"  >
-                                                <Card className="overflow-hidden rounded-2xl p-5 shadow-lg">
-                                                              <img
-                                                                src="https://www.chevrolet.com.br/content/dam/chevrolet/south-america/brazil/portuguese/index/cars/2023-onix/mov/06-images/versiones-2025/onix-lt.jpg?imwidth=960"
-                                                                alt=""
-                                                                className="w-full object-cover"
-                                                              />
-                                                                <h3 className="text-gray-600">Toyota Corolla</h3>
-                                                                <p className="text-gray-600">R$ 150,00/dia</p>
-                                                                <p className="text-gray-600">Toyota</p>
-                                                                <p className="text-gray-600">ABC-1234</p>
-                                                                <p className="text-gray-600">2023</p>
-                                                                
-                                                                <Button className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                                                  Alugar
-                                                                </Button>
-                                                            
-                                                            </Card>
-                                            
+                                            <Card className="overflow-hidden rounded-2xl p-5 shadow-lg">
+                                                <img
+                                                    src="https://www.chevrolet.com.br/content/dam/chevrolet/south-america/brazil/portuguese/index/cars/2023-onix/mov/06-images/versiones-2025/onix-lt.jpg?imwidth=960"
+                                                    alt=""
+                                                    className="w-full object-cover"
+                                                />
+                                                <h3 className="text-gray-600">Toyota Corolla</h3>
+                                                <div className="flex items-center gap-1">
+                                                    {Array.from({ length: 5 }, (_, i) => {
+                                                        const rating = 3.5 || 0;
+                                                        if (rating >= i + 1) {
+                                                            return <Star key={i} className="w-4 h-4 text-blue-600 fill-blue-600" />;
+                                                        } else if (rating >= i + 0.5) {
+                                                            return <StarHalf key={i} className="w-4 h-4 text-blue-600" />;
+                                                        } else {
+                                                            return <StarOff key={i} className="w-4 h-4 text-gray-400" />;
+                                                        }
+                                                    })}
+                                                </div>
+                                                <p className="text-gray-600">R$ 150,00/dia</p>
+                                                <p className="text-gray-600">Toyota</p>
+                                                <p className="text-gray-600">ABC-1234</p>
+                                                <p className="text-gray-600">2023</p>
+
+                                                <Button onClick={handleError} className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                                    Alugar
+                                                </Button>
+
+                                            </Card>
+
                                         </div>
 
                                     </div>
