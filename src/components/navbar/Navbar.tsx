@@ -15,9 +15,9 @@ function Navbar() {
           {/* <ChevronDown size={16} /> */}
           </Button>
           <div className="absolute text-black right-0 mt-0 mx-2 w-35 bg-white rounded-md shadow-md opacity-0 group-hover:opacity-100 group-hover:visible transition-opacity duration-300 invisible">
-            <a className="flex px-4 py-2 hover:bg-gray-100 group-hover:visible" href="/"><Home className="w-4 h-4 m-2 text-blue-600" />Início</a>
-            <a className="flex px-4 py-2 hover:bg-gray-100 group-hover:visible" href="/carrental"><Car className="w-4 h-4 m-2 text-blue-600" />Carros</a>
-            <a className="flex px-4 py-2 hover:bg-gray-100 group-hover:visible" href="#"><Phone className="w-4 h-4 m-2 text-blue-600" />Contato</a>
+            <a className="flex px-4 py-2 hover:bg-gray-100 group-hover:visible" href="/"><Home className="w-4 h-4 m-2 text-blue-600" /><p className="text-blue-600 hover:underline">Início</p></a>
+            <a className="flex px-4 py-2 hover:bg-gray-100 group-hover:visible" href="/carrental"><Car className="w-4 h-4 m-2 text-blue-600" /><p className="text-blue-600 hover:underline">Carros</p></a>
+            <a className="flex px-4 py-2 hover:bg-gray-100 group-hover:visible" href="#"><Phone className="w-4 h-4 m-2 text-blue-600" /><p className="text-blue-600 hover:underline">Contato</p></a>
           </div>
         </div>
       </nav>

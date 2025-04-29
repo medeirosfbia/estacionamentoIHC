@@ -91,6 +91,21 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Footer */}
+      <footer className="mt-32 w-full bg-blue-600 text-white py-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+          <div className="text-center md:text-left mb-6 md:mb-0">
+            <h3 className="text-2xl font-bold">AlugaCar</h3>
+            <p className="text-gray-200 mt-2">Sua liberdade sobre quatro rodas!</p>
+          </div>
+          <div className="flex space-x-8">
+            <a href="#"><p className="text-gray-200 hover:underline">Sobre Nós</p></a>
+            <a href="#"><p className="text-gray-200 hover:underline">Contato</p></a>
+            <a href="#"><p className="text-gray-200 hover:underline">Política de Privacidade</p></a>
+          </div>
+        </div>
+      </footer>
+
     </div>
   );
 }

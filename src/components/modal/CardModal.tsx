@@ -1,6 +1,7 @@
 import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react"
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Card, CardContent } from "../ui/card";
+import { toast } from "react-toastify";
 
 import { Star, StarHalf, StarOff } from "lucide-react";
 
@@ -17,7 +18,7 @@ export const CardModal = () => {
     }
 
     function handleError() {
-        alert('Servidor indisponível, tente novamente mais tarde.')
+        toast.error('🚫 Servidor indisponível, tente novamente mais tarde.')
     }
 
 
