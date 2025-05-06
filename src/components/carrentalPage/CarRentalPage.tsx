@@ -1,10 +1,8 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { CardModal } from "../modal/CardModal";
 
-import { Star, StarHalf, StarOff } from "lucide-react";
+import { Star, StarHalf, StarOff, Car } from "lucide-react";
 
 const cars = [
   {
@@ -192,7 +190,9 @@ const cars = [
 export default function CarRentalPage() {
   return (
     <div className="">
-      <div className="min-h-screen w-full bg-gray-300">
+      <div className="min-h-screen w-full bg-gradient-to-br from-white to-orange-50">
+      <h1 className="text-4xl font-bold text-center text-blue-900 pt-10 mb-6 flex justify-center items-center gap-2">
+        <Car className="w-14 h-14 text-blue-900" /> Escolha seu próximo carro</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-6 p-6">
           {cars.map((car, index) => (
             <motion.div
@@ -200,30 +200,30 @@ export default function CarRentalPage() {
               whileHover={{ scale: 1.05 }}
               className="cursor-pointer"
             >
-              <Card className="overflow-hidden rounded-2xl shadow-lg">
+              <Card className="overflow-hidden rounded-2xl shadow-lg border border-blue-200 bg-white hover:shadow-xl transition-shadow duration-300">
                 <img
                   src={car.image}
                   alt={car.name}
-                  className="w-full object-cover"
+                  className="w-full h-40 object-cover"
                 />
                 <CardContent >
-                  <h3 className="text-gray-600">{car.name}</h3>
-                  <div className="flex items-center gap-1">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-2">{car.name}</h3>
+                  <div className="flex items-center gap-1 mb-2">
                     {Array.from({ length: 5 }, (_, i) => {
                       const rating = car.rating || 0;
                       if (rating >= i + 1) {
-                        return <Star key={i} className="w-4 h-4 text-blue-600 fill-blue-600" />;
+                        return <Star key={i} className="w-4 h-4 text-orange-600 fill-orange-600" />;
                       } else if (rating >= i + 0.5) {
-                        return <StarHalf key={i} className="w-4 h-4 text-blue-600" />;
+                        return <StarHalf key={i} className="w-4 h-4 text-orange-600" />;
                       } else {
                         return <StarOff key={i} className="w-4 h-4 text-gray-400" />;
                       }
                     })}
                   </div>
-                  <p className="text-gray-600">{car.price}</p>
-                  <p className="text-gray-600">{car.marca}</p>
-                  <p className="text-gray-600">{car.placa}</p>
-                  <p className="text-gray-600">{car.ano}</p>
+                  <p className="text-blue-700 font-medium">{car.price}</p>
+                  <p className="text-gray-600 text-sl">Marca: {car.marca}</p>
+                  <p className="text-gray-600 text-sl">Placa: {car.placa}</p>
+                  <p className="text-gray-600 text-sl mb-4">Ano: {car.ano}</p>
                   <CardModal />
                   {/* <Button className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                   Alugar
@@ -239,3 +239,5 @@ export default function CarRentalPage() {
     </div>
   );
 }
+
+
